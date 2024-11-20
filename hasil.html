@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Polling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .title {
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        .result {
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Hasil Polling</div>
+        <div class="result" id="result-1">Box 1: 0 votes</div>
+        <div class="result" id="result-2">Box 2: 0 votes</div>
+        <div class="result" id="result-3">Box 3: 0 votes</div>
+        <div class="result" id="result-4">Box 4: 0 votes</div>
+        <div class="result" id="result-5">Box 5: 0 votes</div>
+        <div class="result" id="result-6">Box 6: 0 votes</div>
+        <div class="result" id="result-7">Box 7: 0 votes</div>
+        <div class="result" id="result-8">Box 8: 0 votes</div>
+        <div class="result" id="result-9">Box 9: 0 votes</div>
+        <div class="result" id="result-10">Box 10: 0 votes</div>
+        <div class="result" id="result-11">Box 11: 0 votes</div>
+        <div class="result" id="result-12">Box 12: 0 votes</div>
+        <div class="result" id="result-13">Box 13: 0 votes</div>
+        <div class="result" id="result-14">Box 14: 0 votes</div>
+        <div class="result" id="result-15">Box 15: 0 votes</div>
+        <div class="result" id="result-16">Box 16: 0 votes</div>
+        <div class="result" id="result-17">Box 17: 0 votes</div>
+        <div class="result" id="result-18">Box 18: 0 votes</div>
+        <div class="result" id="result-19">Box 19: 0 votes</div>
+        <div class="result" id="result-20">Box 20: 0 votes</div>
+        <div class="result" id="result-21">Box 21: 0 votes</div>
+        <div class="result" id="result-22">Box 22: 0 votes</div>
+        <div class="result" id="result-23">Box 23: 0 votes</div>
+        <div class="result" id="result-24">Box 24: 0 votes</div>
+        <div class="result" id="result-25">Box 25: 0 votes</div>
+    </div>
+
+    <script>
+        // Tampilkan hasil dari localStorage
+        for (let i = 1; i <= 25; i++) {
+            const resultElement = document.getElementById(`result-${i}`);
+            const voteCount = localStorage.getItem(`box-${i}`) || 0;
+            resultElement.textContent = `Box ${i}: ${voteCount} votes`;
+        }
+    </script>
+</body>
+</html>
