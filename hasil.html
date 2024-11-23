@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,7 @@
 <body>
     <div class="container">
         <div class="title">Hasil Polling</div>
+        <!-- Result boxes untuk 32 guru -->
         <div class="result" id="result-1">Box 1: 0 votes</div>
         <div class="result" id="result-2">Box 2: 0 votes</div>
         <div class="result" id="result-3">Box 3: 0 votes</div>
@@ -59,13 +60,20 @@
         <div class="result" id="result-23">Box 23: 0 votes</div>
         <div class="result" id="result-24">Box 24: 0 votes</div>
         <div class="result" id="result-25">Box 25: 0 votes</div>
+        <div class="result" id="result-26">Box 26: 0 votes</div>
+        <div class="result" id="result-27">Box 27: 0 votes</div>
+        <div class="result" id="result-28">Box 28: 0 votes</div>
+        <div class="result" id="result-29">Box 29: 0 votes</div>
+        <div class="result" id="result-30">Box 30: 0 votes</div>
+        <div class="result" id="result-31">Box 31: 0 votes</div>
+        <div class="result" id="result-32">Box 32: 0 votes</div>
     </div>
 
     <script>
         // Tampilkan hasil dari localStorage
-        for (let i = 1; i <= 25; i++) {
+        for (let i = 1; i <= 32; i++) {
             const resultElement = document.getElementById(`result-${i}`);
-            const voteCount = localStorage.getItem(`box-${i}`) || 0;
+            const voteCount = localStorage.getItem(`box-${i}`) || 0;  // Pastikan ID sesuai dengan yang disimpan di localStorage
             resultElement.textContent = `Box ${i}: ${voteCount} votes`;
         }
     </script>
