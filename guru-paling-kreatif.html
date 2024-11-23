@@ -3,107 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guru Paling Kreatif</title>
+    <title>Guru Paling Terbaik</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
-            background-color: #f9f9f9;
+            padding: 0;
+            background: url('https://img.freepik.com/premium-vector/handdrawn-vector-illustration-business-education-concept_1332465-7786.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.8);
+            height: auto;
         }
+
+        body::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1; 
+        }
+
         .container {
             text-align: center;
+            width: 100%;
+            height: 120vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            width: 90%;
-            max-width: 800px;
         }
+
+        #votingSection {
+            width: 1200px;
+            height: 690px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        .box {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            height: 140px;
+            max-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1:1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .box img {
+            max-width: 100%;
+            max-height: 120%;
+            object-fit: contain; cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .box:active img{
+            animation: pulse 0.5s ease-in-out;
+            transform: scale(1:1);
+            opacity: 0.8;
+        }
+
+        .box:hover {
+            background-color: #007bff;
+        }
+
         .title {
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
             font-size: 36px;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 8px;
+            position: relative;
+            top: 80px;
+            margin-bottom: 40px;
         }
+
         .subtitle {
             background-color: #d9534f;
             color: white;
             padding: 15px 30px;
-            margin-bottom: 30px;
+            margin-top: 30px;
             display: inline-block;
             border-radius: 8px;
             font-size: 24px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: #e0e0e0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .box:hover {
-            background-color: #d9534f;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">GURU PALING KREATIF</div>
+        <div class="title">Pilih Guru Terbaik</div>
         <div class="subtitle">PILIH SALAH SATU</div>
-        <div class="grid">
-            <div class="box" id="box-1"></div>
-            <div class="box" id="box-2"></div>
-            <div class="box" id="box-3"></div>
-            <div class="box" id="box-4"></div>
-            <div class="box" id="box-5"></div>
-            <div class="box" id="box-6"></div>
-            <div class="box" id="box-7"></div>
-            <div class="box" id="box-8"></div>
-            <div class="box" id="box-9"></div>
-            <div class="box" id="box-10"></div>
-            <div class="box" id="box-11"></div>
-            <div class="box" id="box-12"></div>
-            <div class="box" id="box-13"></div>
-            <div class="box" id="box-14"></div>
-            <div class="box" id="box-15"></div>
-            <div class="box" id="box-16"></div>
-            <div class="box" id="box-17"></div>
-            <div class="box" id="box-18"></div>
-            <div class="box" id="box-19"></div>
-            <div class="box" id="box-20"></div>
-            <div class="box" id="box-21"></div>
-            <div class="box" id="box-22"></div>
-            <div class="box" id="box-23"></div>
-            <div class="box" id="box-24"></div>
-            <div class="box" id="box-25"></div>
+        <div id="votingSection">
+            <!-- Kotak voting -->
+            <div class="box" id="guru-1" onclick="vote('BU ANI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20ANI.png" alt="BU ANI">
+            </div>
+            <div class="box" id="guru-2" onclick="vote('BU DIAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20DI'AH.png" alt="BU DI'AH">
+            </div>
+            <div class="box" id="guru-3" onclick="vote('BU ENDANG')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20ENDANG.png" alt="BU ENDANG">
+            </div>
+            <div class="box" id="guru-4" onclick="vote('BU HAMIDAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20HAMIDAH.png" alt="BU HAMIDAH">
+            </div>
+            <div class="box" id="guru-5" onclick="vote('BU IIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20IIN.png" alt="BU IIN">
+            </div>
+            <div class="box" id="guru-6" onclick="vote('BU INDRA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20INDRA.png" alt="BU INDRA">
+            </div>
+            <div class="box" id="guru-7" onclick="vote('BU LELI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20LELI.png" alt="BU LELI">
+            </div>
+            <div class="box" id="guru-8" onclick="vote('BU LILAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20LILAH.png" alt="BU LILAH">
+            </div>
+            <div class="box" id="guru-9" onclick="vote('BU MARATUS')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20MAR'ATUS.png" alt="BU MAR'ATUS">
+            </div>
+            <div class="box" id="guru-10" onclick="vote('BU NELI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NELI.png" alt="BU NELI">
+            </div>
+            <div class="box" id="guru-11" onclick="vote('BU DELA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20DELA.png" alt="BU DELA">
+            </div>
+            <div class="box" id="guru-12" onclick="vote('BU NIKMAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NIKMAH.png" alt="BU NIKMAH">
+            </div>
+            <div class="box" id="guru-13" onclick="vote('BU NINIK')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NINIK.png" alt="BU NINIK">
+            </div>
+            <div class="box" id="guru-14" onclick="vote('BU NOVA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NOVA.png" alt="BU NOVA">
+            </div>
+            <div class="box" id="guru-15" onclick="vote('BU RIRIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20RIRIN.png" alt="BU RIRIN">
+            </div>
+            <div class="box" id="guru-16" onclick="vote('BU SILFI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20SILFI.png" alt="BU SILFI">
+            </div>
+            <div class="box" id="guru-17" onclick="vote('BU SITI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20SITI.png" alt="BU SITI">
+            </div>
+            <div class="box" id="guru-18" onclick="vote('BU WID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20WID.png" alt="BU WID">
+            </div>
+            <div class="box" id="guru-19" onclick="vote('PAK ASYHAD')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20ASYHAD.png" alt="PAK ASYHAD">
+            </div>
+            <div class="box" id="guru-20" onclick="vote('PAK DAUS')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20DAUS.png" alt="PAK DAUS">
+            </div>
+            <div class="box" id="guru-21" onclick="vote('PAK FARID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20FARID.png" alt="PAK FARID">
+            </div>
+            <div class="box" id="guru-22" onclick="vote('PAK FARIHUN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20FARIHUN.png" alt="PAK FARIHUN">
+            </div>
+            <div class="box" id="guru-23" onclick="vote('PAK HAR')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20HAR.png" alt="PAK HAR">
+            </div>
+            <div class="box" id="guru-24" onclick="vote('PAK JAKA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20JAKA.png" alt="PAK JAKA">
+            </div>
+            <div class="box" id="guru-25" onclick="vote('PAK KHOLID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20KHOLID.png" alt="PAK KHOLID">
+            </div>
+            <div class="box" id="guru-26" onclick="vote('PAK LUKMAN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20LUKMAN.png" alt="PAK LUKMAN">
+            </div>
+            <div class="box" id="guru-27" onclick="vote('PAK MAGHFUR')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MAGHFUR.png" alt="PAK MAGHFUR">
+            </div>
+            <div class="box" id="guru-28" onclick="vote('PAK MUBIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MUBIN.png" alt="PAK MUBIN">
+            </div>
+            <div class="box" id="guru-29" onclick="vote('PAK MUJIB')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MUJIB.png" alt="PAK MUJIB">
+            </div>
+            <div class="box" id="guru-30" onclick="vote('PAK MAULANA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MULANA.png" alt="PAK MAULANA">
+            </div>
+            <div class="box" id="guru-31" onclick="vote('PAK RONI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20RONI.png" alt="PAK RONI">
+            </div>
+            <div class="box" id="guru-32" onclick="vote('PAK SHOFAN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20SHOFAN.png" alt="PAK SHOFAN">
+            </div>
         </div>
     </div>
 
     <script>
-        // Simpan polling dalam localStorage
-        const updateVoteCount = (boxId) => {
-            // Ambil jumlah voting saat ini dari localStorage
-            let currentVotes = localStorage.getItem(boxId);
-            currentVotes = currentVotes ? parseInt(currentVotes) : 0;
-            currentVotes++;
+        // Fungsi untuk mencatat voting
+        function vote(guruName) {
+            // Ambil data suara dari localStorage
+            let votes = JSON.parse(localStorage.getItem('votes')) || {};
 
-            // Update jumlah voting dan simpan di localStorage
-            localStorage.setItem(boxId, currentVotes);
-        };
+            // Tambah suara untuk guru yang dipilih
+            if (!votes[guruName]) {
+                votes[guruName] = 0;
+            }
+            votes[guruName]++;
 
-        // Daftar semua kotak
-        for (let i = 1; i <= 25; i++) {
-            const box = document.getElementById(`box-${i}`);
-            // Tambahkan event listener untuk setiap kotak
-            box.addEventListener('click', () => updateVoteCount(`box-${i}`));
+            // Simpan kembali data ke localStorage
+            localStorage.setItem('votes', JSON.stringify(votes));
+
+            // Tampilkan pesan konfirmasi
+            alert(`Terima kasih, Anda telah memilih ${guruName}!`);
+
+            // Redirect ke halaman hasil voting setelah 2 detik
+            setTimeout(() => {
+                window.location.href = "hasil-voting.html"; // Ganti dengan nama file hasil Anda
+            }, 2000);
         }
     </script>
 </body>
